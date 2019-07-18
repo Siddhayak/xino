@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -80,9 +81,10 @@
 </body>
 
 <script type="text/javascript">
-
+  //close eyes
   var CLIENT_ID = '120665867394-bevot2m1efmsqd7fpcqu9shcos5lrug5.apps.googleusercontent.com';
   var API_KEY = 'AIzaSyC1gcEfbFXfyA5nMSFA_ummw-UkxC0OP9g';
+  //open eyes
   var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"];
   var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
   var authorizeButton = document.getElementById('authorize_button');
@@ -127,22 +129,15 @@
     gapi.auth2.getAuthInstance().signOut();
   }
 
-  function showmail() { //look at this god of a function
+  function showmail() { 
     var mails;
-
-    gapi.client.gmail.users.messages.list({
-      'userId': 'me'
-    }).then((res) => {
-      console.log(res);
-    });
-
     gapi.client.gmail.users.threads.list({
-      'userId': 'me',
-      'maxResults': 100 //max returns you want kids
+      userId: 'me',
+      maxResults: 100 
     }).then(function (res) {
       mails = JSON.parse(res.body).threads;
       var table = document.getElementById("myTable");
-      for (var i = 1; i <= 60; i++) { //number of emals you kids want to show
+      for (var i = 1; i <= 60; i++) { 
         var row = table.insertRow(i);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);

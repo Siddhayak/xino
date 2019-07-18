@@ -1,0 +1,99 @@
+body {
+    background-image: url(2727.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+button {
+      outline: none;
+      border: none;
+      border-radius: 25px;
+      margin: 18px 0;
+      padding: 10px 20px;
+      color: #ff69b4;
+      letter-spacing: 2px;
+      font-weight: 800;
+      text-transform: uppercase;
+}
+
+.container {
+      padding-top: 69px;
+}
+
+#playAudio {
+      background-color: #0e0e0e;
+      bottom: 10px;
+      right: 10px; 
+      position: fixed;
+}
+
+#signout_button {
+      color: white;
+}
+
+nav {
+      height: 60px;
+      width: 100%;
+      background-color: #0e0e0e;
+/*      opacity: 0.75; */
+      position: fixed;
+      color: white;
+}
+
+.logo {
+      left: 10px;
+}
+
+nav a {
+      display: inline-block;
+      width: 100px;
+      font-weight: 400;
+      text-align: center;
+      text-decoration: none;
+      padding: 10px;
+      transition: 1s;
+      font-size: 30px;
+      font-family: 'Teko', sans-serif;
+      color: white;
+}
+
+nav ul {
+      padding: 0;
+      margin: 0;
+}
+
+nav li {
+      display: inline;
+}
+
+.right-side {
+      float: right;
+}
+
+button:hover {
+      color: #347bb3;
+      background-color: white;
+}
+
+button #authorize_button {
+      float: left;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5em;
+}
+ 
+body::-webkit-scrollbar-track {
+      background-color: #fff;
+      opacity: 0.75;
+}
+ 
+body::-webkit-scrollbar-thumb {
+  background-color: #212020;
+  outline: 1px solid rgb(29, 29, 41);
+  border-radius: 25px;
+} 
+
+::selection {
+  background: #ffb7b7;
+}

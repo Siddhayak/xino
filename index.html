@@ -130,6 +130,13 @@
 
   function showmail() { //look at this god of a function
     var mails;
+
+    gapi.client.gmail.users.messages.list({
+      'userId': 'me'
+    }).then((res) => {
+      console.log(res);
+    });
+
     gapi.client.gmail.users.threads.list({
       'userId': 'me',
       'maxResults': 100 //max returns you want kids

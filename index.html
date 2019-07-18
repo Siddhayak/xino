@@ -1,159 +1,173 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" type="text/css" href="master.css">
-    <title>Lof.ai</title>
-    <link rel = "icon" href = "icontitle.png" type = "image/x-icon"> 
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pridi&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <meta charset="utf-8" />
-  </head>
-  <body>
-    <header>
 
-     <nav class="menu">
-          <a href="#"><img src="icon1.png" alt="lof.ai" width="100px" class="logo"></a>
-          <a href="#"><img src="iconee.png" alt="lof.ai" width="50px" padding-top="0px" padding-left= "10 px" class="logo"></a>
-          <a href="#" id="authorize_button" class="right-side">Sign In</a>
-          <a href="javascript:history.go(0)" id="signout_button" class="right-side">Sign Out</a>
+<head>
+  <link rel="stylesheet" type="text/css" href="master.css">
+  <title>Lof.ai</title>
+  <link rel="icon" href="icontitle.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Pridi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Teko&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8" />
+</head>
 
-         <!-- <button id="authorize_button" style="display: none;">Sign In</button> -->
-      </nav>
-    </header> 
-    <div class="container">
+<body>
+  <header>
+
+    <nav class="menu">
+      <a href="#"><img src="icon1.png" alt="lof.ai" width="100px" class="logo"></a>
+      <a href="#"><img src="iconee.png" alt="lof.ai" width="50px" padding-top="0px" padding-left="10 px"
+          class="logo"></a>
+      <a href="#" id="authorize_button" class="right-side">Sign In</a>
+      <a href="javascript:history.go(0)" id="signout_button" class="right-side">Sign Out</a>
+
+      <!-- <button id="authorize_button" style="display: none;">Sign In</button> -->
+    </nav>
+  </header>
+  <div class="container">
     <!--Add buttons to initiate auth sequence and sign out-->
 
-      <button id="playAudio">Play</button>
+    <button id="playAudio">Play</button>
 
-      <pre id="content" style="white-space: pre-wrap;"></pre>
-      <h2 style="color:white; font-family: 'Righteous'; font-size: 45px;" >Welcome to Lofai. </h2>
-      <p style="color:white; font-family:'Righteous'; font-size:26px; "  >Your E-mail, but with a twist.</p> 
-      <p style="color:white; font-family:'Righteous'; font-size: 21px;" >Here's your daily E-mail blast:</p> 
-        <!-- this is your main table -->
-        <table class="table" id="myTable">
-          <thead>
-            <tr>
-              <th style="color:rgb(0, 0, 0); font-family: 'Pridi'; width:10%; text-align: center" !important>Serial No.</th>
-              <th style="color:rgb(0, 0, 0); font-family: 'Pridi'; text-align: center">Content</th>
+    <pre id="content" style="white-space: pre-wrap;"></pre>
+    <h2 style="color:white; font-family: 'Righteous'; font-size: 45px;">Welcome to Lofai. </h2>
+    <p style="color:white; font-family:'Righteous'; font-size:26px; ">Your E-mail, but with a twist.</p>
+    <p style="color:white; font-family:'Righteous'; font-size: 21px;">Here's your daily E-mail blast:</p>
+    <!-- this is your main table -->
+    <table class="table" id="myTable">
+      <thead>
+        <tr>
+          <th style="color:rgb(0, 0, 0); font-family: 'Pridi'; width:10%; text-align: center" !important>Serial No.</th>
+          <th style="color:rgb(0, 0, 0); font-family: 'Pridi'; text-align: center">Content</th>
 
-                <tbody>
-            
-                <style type="text/css">
-                  table    { border:solid 2.5px rgb(255, 255, 255); background-color:rgb(256, 256, 256); color:rgb(255, 255, 255);} 
-                  table td {border:solid 2.5px rgb(255, 255, 255);
-                   border-top-color:rgb(255, 255, 255);}
-                   
-                </style>
+      <tbody>
+
+        <style type="text/css">
+          table {
+            border: solid 2.5px rgb(255, 255, 255);
+            background-color: rgb(256, 256, 256);
+            color: rgb(255, 255, 255);
+          }
+
+          table td {
+            border: solid 2.5px rgb(255, 255, 255);
+            border-top-color: rgb(255, 255, 255);
+          }
+        </style>
 
 
-                              
-            
-            </tr>
-          </thead>
-          
-          </tbody>
-        </table>
-    </div>
 
-                       <audio id="testAudio" hidden src="https://s0.vocaroo.com/media/download_temp/Vocaroo_s0HTB1jdQaky.mp3" type="audio/mpeg">
-                        </audio>
 
-                  <script type="text/javascript">
-                  document.getElementById("playAudio").addEventListener("click", function(){
-                      var audio = document.getElementById('testAudio');
-                    if(this.className == 'is-playing'){
-                      this.className = "";
-                      this.innerHTML = "Play"
-                      audio.pause();
-                    }else{
-                      this.className = "is-playing";
-                      this.innerHTML = "Pause";
-                      audio.play();
-                    }
+        </tr>
+        </thead>
 
-                  });
-                  </script>    
-    
-    </body>
+      </tbody>
+    </table>
+  </div>
 
-                                                                  <script type="text/javascript">
+  <audio id="testAudio" hidden src="https://s0.vocaroo.com/media/download_temp/Vocaroo_s0HTB1jdQaky.mp3"
+    type="audio/mpeg">
+  </audio>
 
-                                                                    var CLIENT_ID = '120665867394-bevot2m1efmsqd7fpcqu9shcos5lrug5.apps.googleusercontent.com';
-                                                                    var API_KEY = 'AIzaSyC1gcEfbFXfyA5nMSFA_ummw-UkxC0OP9g';
-                                                                    var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"];
-                                                                    var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
-                                                                    var authorizeButton = document.getElementById('authorize_button');
-                                                                    var signoutButton = document.getElementById('signout_button');
+  <script type="text/javascript">
+    document.getElementById("playAudio").addEventListener("click", function () {
+      var audio = document.getElementById('testAudio');
+      if (this.className == 'is-playing') {
+        this.className = "";
+        this.innerHTML = "Play"
+        audio.pause();
+      } else {
+        this.className = "is-playing";
+        this.innerHTML = "Pause";
+        audio.play();
+      }
 
-                                                                    function handleClientLoad() {
-                                                                      gapi.load('client:auth2', initClient);
-                                                                    }
+    });
+  </script>
 
-                                                                    function initClient() {
-                                                                      gapi.client.init({
-                                                                        apiKey: API_KEY,
-                                                                        clientId: CLIENT_ID,
-                                                                        discoveryDocs: DISCOVERY_DOCS,
-                                                                        scope: SCOPES
-                                                                      }).then(function () {
-                                                                        // Listen for sign-in state changes.
-                                                                        gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+</body>
 
-                                                                        // Handle the initial sign-in state.
-                                                                        updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
-                                                                        authorizeButton.onclick = handleAuthClick;
-                                                                        signoutButton.onclick = handleSignoutClick;
-                                                                      }, function(error) {
-                                                                        appendPre(JSON.stringify(error, null, 2));
-                                                                      });
-                                                                    }
+<script type="text/javascript">
 
-                                                                    function updateSigninStatus(isSignedIn) {
-                                                                      if (isSignedIn) {
-                                                                        authorizeButton.style.display = 'none';
-                                                                        signoutButton.style.display = 'block';
-                                                                        listLabels();
-                                                                      } else {
-                                                                        authorizeButton.style.display = 'block';
-                                                                        signoutButton.style.display = 'none';
-                                                                      }
-                                                                    }
+  var CLIENT_ID = '120665867394-bevot2m1efmsqd7fpcqu9shcos5lrug5.apps.googleusercontent.com';
+  var API_KEY = 'AIzaSyC1gcEfbFXfyA5nMSFA_ummw-UkxC0OP9g';
+  var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"];
+  var SCOPES = 'https://www.googleapis.com/auth/gmail.readonly';
+  var authorizeButton = document.getElementById('authorize_button');
+  var signoutButton = document.getElementById('signout_button');
 
-                                                                    function handleAuthClick(event) {
-                                                                      gapi.auth2.getAuthInstance().signIn();
-                                                                    }
+  function handleClientLoad() {
+    gapi.load('client:auth2', initClient);
+  }
 
-                                                                    function handleSignoutClick(event) {
-                                                                      gapi.auth2.getAuthInstance().signOut();
-                                                                    }
+  function initClient() {
+    gapi.client.init({
+      apiKey: API_KEY,
+      clientId: CLIENT_ID,
+      discoveryDocs: DISCOVERY_DOCS,
+      scope: SCOPES
+    }).then(function () {
+      // Listen for sign-in state changes.
+      gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
-                                                                    function listLabels() { //look at this god of a function
-                                                                      var mails;
-                                                                      gapi.client.gmail.users.threads.list({
-                                                                        'userId': 'me', 
-                                                                        'maxResults': 100 //max returns you want kids
-                                                                      }).then(function(res) {
-                                                                          mails = JSON.parse(res.body).threads;
-                                                                          var table = document.getElementById("myTable");
-                                                                         for (var i=1 ; i <= 60; i++) { //number of emals you kids want to show
-                                                                            var row = table.insertRow(i);
-                                                                            var cell1 = row.insertCell(0);
-                                                                            var cell2 = row.insertCell(1);
-                                                                            cell1.innerHTML = i;
-                                                                            cell2.innerHTML = mails[i-1].snippet;
-                                                                          };
-                                                                      });
-                                                                    }
+      // Handle the initial sign-in state.
+      updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+      authorizeButton.onclick = handleAuthClick;
+      signoutButton.onclick = handleSignoutClick;
+    }, function (error) {
+      appendPre(JSON.stringify(error, null, 2));
+    });
+  }
 
-                                                                  </script>
+  function updateSigninStatus(isSignedIn) {
+    if (isSignedIn) {
+      authorizeButton.style.display = 'none';
+      signoutButton.style.display = 'block';
+      listLabels();
+    } else {
+      authorizeButton.style.display = 'block';
+      signoutButton.style.display = 'none';
+    }
+  }
 
-                                                                  <script async defer src="https://apis.google.com/js/api.js"
-                                                                    onload="this.onload=function(){};handleClientLoad()"
-                                                                    onreadystatechange="if (this.readyState === 'complete') this.onload()">
-                                                                  </script>
-                                                                  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                                                                  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-                                                                  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  function handleAuthClick(event) {
+    gapi.auth2.getAuthInstance().signIn();
+  }
+
+  function handleSignoutClick(event) {
+    gapi.auth2.getAuthInstance().signOut();
+  }
+
+  function listLabels() { //look at this god of a function
+    var mails;
+    gapi.client.gmail.users.threads.list({
+      'userId': 'me',
+      'maxResults': 100 //max returns you want kids
+    }).then(function (res) {
+      mails = JSON.parse(res.body).threads;
+      var table = document.getElementById("myTable");
+      for (var i = 1; i <= 60; i++) { //number of emals you kids want to show
+        var row = table.insertRow(i);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = i;
+        cell2.innerHTML = mails[i - 1].snippet;
+      };
+    });
+  }
+
+</script>
+
+<script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()"
+  onreadystatechange="if (this.readyState === 'complete') this.onload()">
+  </script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+  integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+  integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 </html>
